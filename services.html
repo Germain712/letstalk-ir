@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services – Let’s Talk IR</title>
+
+    <!-- English Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Farsi Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="logo-circle">LT</div>
+          <span class="brand-title">Let’s Talk IR</span>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle">☰</button>
+
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html" class="active">Services</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero small-hero">
+      <div class="hero-inner">
+        <img
+          src="assets/images/hero-shiva.jpg"
+          alt="Shiva portrait"
+          class="hero-img small"
+        />
+
+        <h1 class="hero-title">Services</h1>
+        <p class="hero-subtitle">
+          Support designed for clarity, confidence, and growth.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENGLISH SERVICES -->
+    <section class="section services-section">
+      <div class="container">
+        <h2>How I Can Help You</h2>
+
+        <!-- MOBILE GRID -->
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Personal Consultation</h3>
+            <p>1:1 sessions via Zoom or WhatsApp</p>
+            <span class="price">£40–£120</span>
+            <a href="contact.html" class="btn-primary">Book Now</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Voice Note Support</h3>
+            <p>Weekly audio guidance & accountability</p>
+            <span class="price">£70/week</span>
+            <a href="contact.html" class="btn-primary">Start Support</a>
+          </article>
+
+          <article class="service-card">
+            <h3>Video Courses</h3>
+            <p>Self-paced lessons in Farsi & English</p>
+            <span class="price coming-soon">Coming Soon</span>
+            <a href="contact.html" class="btn-secondary">Join Waitlist</a>
+          </article>
+        </div>
+
+        <!-- DESKTOP CAROUSEL -->
+        <div class="service-carousel">
+          <div class="carousel-track">
+            <div class="service-card">
+              <h3>Personal Consultation</h3>
+              <p>1:1 sessions via Zoom or WhatsApp</p>
+              <span class="price">£40–£120</span>
+              <a href="contact.html" class="btn-primary">Book Now</a>
+            </div>
+
+            <div class="service-card">
+              <h3>Voice Note Support</h3>
+              <p>Weekly audio guidance & accountability</p>
+              <span class="price">£70/week</span>
+              <a href="contact.html" class="btn-primary">Start Support</a>
+            </div>
+
+            <div class="service-card">
+              <h3>Video Courses</h3>
+              <p>Self-paced lessons in Farsi & English</p>
+              <span class="price coming-soon">Coming Soon</span>
+              <a href="contact.html" class="btn-secondary">Join Waitlist</a>
+            </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FARSI SERVICES -->
+    <section class="section services-section rtl">
+      <div class="container">
+        <h2>چطور می‌توانم کمکت کنم؟</h2>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>مشاوره فردی</h3>
+            <p>جلسات یک‌به‌یک از طریق زوم یا واتس‌اپ</p>
+            <span class="price">۴۰ تا ۱۲۰ پوند</span>
+            <a href="contact.html" class="btn-primary">رزرو جلسه</a>
+          </article>
+
+          <article class="service-card">
+            <h3>حمایت صوتی</h3>
+            <p>راهنمایی هفتگی از طریق ویس</p>
+            <span class="price">۷۰ پوند در هفته</span>
+            <a href="contact.html" class="btn-primary">شروع حمایت</a>
+          </article>
+
+          <article class="service-card">
+            <h3>دوره‌های ویدیویی</h3>
+            <p>درس‌های خودآموز به فارسی و انگلیسی</p>
+            <span class="price coming-soon">به‌زودی</span>
+            <a href="contact.html" class="btn-secondary"
+              >عضویت در لیست انتظار</a
+            >
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>© <span id="year"></span> Let’s Talk IR – Shiva</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
