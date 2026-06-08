@@ -50,7 +50,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   HEADER + NAVIGATION
+   HEADER + NAVIGATION (CLEAN VERSION)
 --------------------------------------------------- */
 .site-header {
   background: #fff;
@@ -65,6 +65,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .brand {
@@ -90,6 +91,7 @@ p {
   font-weight: 600;
 }
 
+/* Desktop nav (default) */
 .main-nav {
   display: flex;
   gap: 1.5rem;
@@ -105,12 +107,77 @@ p {
   color: #5a2a82;
 }
 
-/* Mobile Menu */
+/* Hamburger button (hidden on desktop) */
 .menu-toggle {
   display: none;
-  font-size: 1.8rem;
+  font-size: 2rem;
   background: none;
   border: none;
+  cursor: pointer;
+  z-index: 2000;
+}
+
+/* ---------------------------------------------------
+   MOBILE NAVIGATION
+--------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Turn nav into dropdown panel */
+  .main-nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 0.4s ease,
+      opacity 0.3s ease;
+
+    z-index: 1500;
+  }
+
+  /* When JS adds .open */
+  .main-nav.open {
+    max-height: 400px;
+    opacity: 1;
+  }
+}
+
+/* Prevent background scroll when menu is open */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------
+   DESKTOP BREAKPOINT
+--------------------------------------------------- */
+@media (min-width: 768px) {
+  /* Hide hamburger on desktop */
+  .menu-toggle {
+    display: none;
+  }
+
+  /* Desktop nav always visible */
+  .main-nav {
+    display: flex;
+    position: static;
+    max-height: none;
+    opacity: 1;
+    padding: 0;
+  }
 }
 
 /* ---------------------------------------------------
@@ -328,16 +395,6 @@ p {
    RESPONSIVE BREAKPOINTS
 --------------------------------------------------- */
 @media (min-width: 768px) {
-  /* Desktop Nav */
-  .menu-toggle {
-    display: none;
-  }
-
-  .main-nav {
-    display: flex;
-  }
-
-  /* Desktop Carousel */
   .service-grid {
     display: none;
   }

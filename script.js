@@ -1,14 +1,21 @@
-/* ---------------------------------------------------
-   MOBILE MENU TOGGLE
---------------------------------------------------- */
+/* MOBILE MENU TOGGLE */
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
 if (menuToggle) {
   menuToggle.addEventListener("click", () => {
     mainNav.classList.toggle("open");
+    document.body.classList.toggle("no-scroll");
   });
 }
+
+/* Close menu when clicking a link */
+document.querySelectorAll(".main-nav a").forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    document.body.classList.remove("no-scroll");
+  });
+});
 
 /* ---------------------------------------------------
    AUTO YEAR UPDATE
