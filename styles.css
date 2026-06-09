@@ -121,12 +121,10 @@ p {
    MOBILE NAVIGATION
 --------------------------------------------------- */
 @media (max-width: 768px) {
-  /* Show hamburger */
   .menu-toggle {
     display: block;
   }
 
-  /* Turn nav into dropdown panel */
   .main-nav {
     position: absolute;
     top: 70px;
@@ -149,14 +147,12 @@ p {
     z-index: 1500;
   }
 
-  /* When JS adds .open */
   .main-nav.open {
     max-height: 400px;
     opacity: 1;
   }
 }
 
-/* Prevent background scroll when menu is open */
 .no-scroll {
   overflow: hidden;
 }
@@ -165,12 +161,10 @@ p {
    DESKTOP BREAKPOINT
 --------------------------------------------------- */
 @media (min-width: 768px) {
-  /* Hide hamburger on desktop */
   .menu-toggle {
     display: none;
   }
 
-  /* Desktop nav always visible */
   .main-nav {
     display: flex;
     position: static;
@@ -314,7 +308,6 @@ p {
   color: #ff7a00;
 }
 
-/* Desktop Carousel */
 .service-carousel {
   display: none;
   margin-top: 3rem;
@@ -325,6 +318,7 @@ p {
   display: flex;
   gap: 1.5rem;
   overflow: hidden;
+  transition: transform 0.4s ease;
 }
 
 .carousel-controls {
@@ -341,6 +335,7 @@ p {
   padding: 0.6rem 1rem;
   border-radius: 6px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 
 /* ---------------------------------------------------
@@ -402,4 +397,145 @@ p {
   .service-carousel {
     display: block;
   }
+}
+
+/* ---------------------------------------------------
+   LANGUAGE TOGGLE + FLAGS + FADE ANIMATION
+--------------------------------------------------- */
+.lang-switch {
+  margin-left: 1rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.2rem 0.4rem;
+}
+
+.lang-en,
+.lang-fa {
+  transition: opacity 0.3s ease;
+}
+
+.lang-fa {
+  opacity: 0;
+}
+
+.fa-mode .lang-en {
+  opacity: 0;
+}
+
+.fa-mode .lang-fa {
+  opacity: 1;
+}
+
+.flag-en,
+.flag-fa {
+  transition: opacity 0.3s ease;
+}
+
+.flag-fa {
+  opacity: 0;
+}
+
+.fa-mode .flag-en {
+  opacity: 0;
+}
+
+.fa-mode .flag-fa {
+  opacity: 1;
+}
+
+/* ---------------------------------------------------
+   FLOATING LANGUAGE BUTTON (MOBILE)
+--------------------------------------------------- */
+.floating-lang-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 0.4rem 0.7rem;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .lang-switch {
+    display: none;
+  }
+
+  .floating-lang-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ---------------------------------------------------
+   COOKIE BANNER (GDPR)
+--------------------------------------------------- */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #111827;
+  color: #f9fafb;
+  padding: 0.8rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  z-index: 998;
+}
+
+.cookie-banner p {
+  margin: 0;
+  max-width: 600px;
+}
+
+.cookie-banner button {
+  background: #10b981;
+  border: none;
+  color: #ffffff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* ---------------------------------------------------
+   BOOKING CALENDAR
+--------------------------------------------------- */
+.booking-calendar {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #f9fafb;
+}
+
+.booking-calendar h3 {
+  margin-top: 0;
+}
+
+.booking-calendar form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 400px;
+}
+
+.booking-calendar input,
+.booking-calendar select {
+  padding: 0.5rem 0.7rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
 }

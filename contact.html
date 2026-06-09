@@ -3,7 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact – Let’s Talk IR</title>
+
+    <title>Contact – Book a Session with Shiva</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Contact Shiva for intuitive counseling, trauma recovery sessions, and emotional healing guidance. Book your consultation today."
+    />
+    <meta property="og:title" content="Contact – Let’s Talk IR" />
+    <meta
+      property="og:description"
+      content="Reach out to Shiva for intuitive counseling, trauma recovery, and emotional clarity."
+    />
+    <meta property="og:image" content="assets/images/hero-shiva.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com/contact.html" />
+
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXX");
+    </script>
 
     <!-- English Fonts -->
     <link
@@ -29,96 +58,219 @@
           <span class="brand-title">Let’s Talk IR</span>
         </div>
 
+        <!-- LANGUAGE TOGGLE -->
+        <div class="lang-switch">
+          <button class="lang-btn">
+            <span class="flag-en">🇬🇧</span>
+            <span class="flag-fa">🇮🇷</span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
         <button class="menu-toggle" id="menuToggle">☰</button>
 
+        <!-- NAVIGATION -->
         <nav class="main-nav" id="mainNav">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="testimonials.html">Testimonials</a>
-          <a href="contact.html" class="active">Contact</a>
+          <a href="index.html">
+            <span class="lang-en">Home</span>
+            <span class="lang-fa">خانه</span>
+          </a>
+
+          <a href="about.html">
+            <span class="lang-en">About</span>
+            <span class="lang-fa">درباره</span>
+          </a>
+
+          <a href="services.html">
+            <span class="lang-en">Services</span>
+            <span class="lang-fa">خدمات</span>
+          </a>
+
+          <a href="testimonials.html">
+            <span class="lang-en">Testimonials</span>
+            <span class="lang-fa">نظرات</span>
+          </a>
+
+          <a href="contact.html" class="active">
+            <span class="lang-en">Contact</span>
+            <span class="lang-fa">تماس</span>
+          </a>
         </nav>
       </div>
     </header>
+
+    <!-- FLOATING LANGUAGE BUTTON (mobile) -->
+    <button class="floating-lang-btn">
+      <span class="flag-en">🇬🇧</span>
+      <span class="flag-fa">🇮🇷</span>
+    </button>
 
     <!-- HERO -->
     <section class="hero small-hero">
       <div class="hero-inner">
         <img
           src="assets/images/hero-shiva.jpeg"
-          alt="Shiva portrait"
+          alt="Shiva – Intuitive Counseling Psychologist"
           class="hero-img small"
         />
 
-        <h1 class="hero-title">Contact</h1>
-        <p class="hero-subtitle">Let’s start the conversation.</p>
+        <h1 class="hero-title">
+          <span class="lang-en">Contact</span>
+          <span class="lang-fa">تماس</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="lang-en">Reach out to begin your healing journey.</span>
+          <span class="lang-fa"
+            >برای آغاز مسیر شفای خود با من در تماس باشید.</span
+          >
+        </p>
       </div>
     </section>
 
-    <!-- ENGLISH CONTACT FORM -->
-    <section class="section contact-section">
+    <!-- CONTACT SECTION -->
+    <section class="section">
       <div class="container">
-        <h2>Book a Session</h2>
+        <h2>
+          <span class="lang-en">Get in Touch</span>
+          <span class="lang-fa">با من در تماس باشید</span>
+        </h2>
+
         <p>
-          If you’d like to book a consultation or ask a question, fill out the
-          form below.
+          <span class="lang-en">
+            Whether you're ready to book a session or simply want to ask a
+            question, I’m here to help. You can reach me through the form below
+            or directly via email or phone.
+          </span>
+
+          <span class="lang-fa">
+            چه آماده رزرو جلسه باشید و چه فقط بخواهید سوالی بپرسید، من اینجا
+            هستم تا کمک کنم. می‌توانید از طریق فرم زیر یا مستقیماً از طریق ایمیل
+            یا تلفن با من در تماس باشید.
+          </span>
         </p>
 
+        <!-- CONTACT FORM -->
         <form class="contact-form" action="#" method="POST">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" name="name" required />
+          <label>
+            <span class="lang-en">Your Name</span>
+            <span class="lang-fa">نام شما</span>
+          </label>
+          <input type="text" name="name" required />
 
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required />
+          <label>
+            <span class="lang-en">Email Address</span>
+            <span class="lang-fa">آدرس ایمیل</span>
+          </label>
+          <input type="email" name="email" required />
 
-          <label for="service">Service</label>
-          <select id="service" name="service">
-            <option value="consultation">Personal Consultation</option>
-            <option value="voice-support">Voice Note Support</option>
-            <option value="courses">Video Courses (Waitlist)</option>
-          </select>
+          <label>
+            <span class="lang-en">Message</span>
+            <span class="lang-fa">پیام</span>
+          </label>
+          <textarea name="message" rows="5" required></textarea>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5"></textarea>
-
-          <button type="submit" class="btn-primary">Send Message</button>
+          <button type="submit" class="btn-primary">
+            <span class="lang-en">Send Message</span>
+            <span class="lang-fa">ارسال پیام</span>
+          </button>
         </form>
-      </div>
-    </section>
 
-    <!-- FARSI CONTACT FORM -->
-    <section class="section contact-section rtl">
-      <div class="container">
-        <h2>رزرو جلسه</h2>
-        <p>
-          اگر می‌خواهید جلسه‌ای رزرو کنید یا سوالی دارید، فرم زیر را پر کنید.
-        </p>
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <h3>
+            <span class="lang-en">Contact Details</span>
+            <span class="lang-fa">اطلاعات تماس</span>
+          </h3>
 
-        <form class="contact-form" action="#" method="POST">
-          <label for="name-fa">نام و نام خانوادگی</label>
-          <input type="text" id="name-fa" name="name-fa" required />
+          <p>
+            <strong
+              ><span class="lang-en">Email:</span
+              ><span class="lang-fa">ایمیل:</span></strong
+            >
+            <a href="mailto:info@letstalkir.com">info@letstalkir.com</a>
+          </p>
 
-          <label for="email-fa">ایمیل</label>
-          <input type="email" id="email-fa" name="email-fa" required />
+          <p>
+            <strong
+              ><span class="lang-en">Phone:</span
+              ><span class="lang-fa">تلفن:</span></strong
+            >
+            <a href="tel:+447000000000">+44 7000 000000</a>
+          </p>
 
-          <label for="service-fa">نوع خدمت</label>
-          <select id="service-fa" name="service-fa">
-            <option value="consultation">مشاوره فردی</option>
-            <option value="voice-support">حمایت صوتی</option>
-            <option value="courses">دوره‌های ویدیویی (لیست انتظار)</option>
-          </select>
+          <p>
+            <strong
+              ><span class="lang-en">Location:</span
+              ><span class="lang-fa">موقعیت:</span></strong
+            >
+            <span class="lang-en">London, United Kingdom</span>
+            <span class="lang-fa">لندن، بریتانیا</span>
+          </p>
+        </div>
 
-          <label for="message-fa">پیام</label>
-          <textarea id="message-fa" name="message-fa" rows="5"></textarea>
+        <!-- BOOKING CALENDAR -->
+        <div class="booking-calendar">
+          <h3>
+            <span class="lang-en">Book a Session</span>
+            <span class="lang-fa">رزرو جلسه</span>
+          </h3>
 
-          <button type="submit" class="btn-primary">ارسال پیام</button>
-        </form>
+          <p>
+            <span class="lang-en">
+              Choose a date and time that works for you. Once you submit your
+              request, I will confirm your booking by email.
+            </span>
+
+            <span class="lang-fa">
+              تاریخ و ساعتی که برای شما مناسب است را انتخاب کنید. پس از ارسال
+              درخواست، زمان جلسه از طریق ایمیل با شما تأیید خواهد شد.
+            </span>
+          </p>
+
+          <form>
+            <label>
+              <span class="lang-en">Preferred Date</span>
+              <span class="lang-fa">تاریخ مورد نظر</span>
+            </label>
+            <input type="date" required />
+
+            <label>
+              <span class="lang-en">Preferred Time</span>
+              <span class="lang-fa">ساعت مورد نظر</span>
+            </label>
+            <select required>
+              <option value="">
+                <span class="lang-en">Select a time</span>
+                <span class="lang-fa">انتخاب ساعت</span>
+              </option>
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+            </select>
+
+            <button type="submit" class="btn-primary">
+              <span class="lang-en">Request Booking</span>
+              <span class="lang-fa">درخواست رزرو</span>
+            </button>
+          </form>
+        </div>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p>© <span id="year"></span> Let’s Talk IR – Shiva</p>
+      <p>
+        <span class="lang-en"
+          >© <span id="year"></span> Let’s Talk IR – Shiva</span
+        >
+        <span class="lang-fa"
+          >© <span id="year"></span> لتس تاک آی‌آر – شیوا</span
+        >
+      </p>
     </footer>
 
     <script src="script.js"></script>

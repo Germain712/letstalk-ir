@@ -1,8 +1,10 @@
-/* MOBILE MENU TOGGLE */
+/* ---------------------------------------------------
+   MOBILE MENU TOGGLE
+--------------------------------------------------- */
 const menuToggle = document.getElementById("menuToggle");
 const mainNav = document.getElementById("mainNav");
 
-if (menuToggle) {
+if (menuToggle && mainNav) {
   menuToggle.addEventListener("click", () => {
     mainNav.classList.toggle("open");
     document.body.classList.toggle("no-scroll");
@@ -26,6 +28,58 @@ if (yearSpan) {
 }
 
 /* ---------------------------------------------------
+   LANGUAGE TOGGLE (HEADER + FLOATING BUTTON)
+--------------------------------------------------- */
+const langButtons = document.querySelectorAll(".lang-btn, .floating-lang-btn");
+
+langButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document.body.classList.toggle("fa-mode");
+
+    const isFarsi = document.body.classList.contains("fa-mode");
+    localStorage.setItem("lang", isFarsi ? "fa" : "en");
+  });
+});
+
+/* Load saved language preference */
+const savedLang = localStorage.getItem("lang");
+if (savedLang === "fa") {
+  document.body.classList.add("fa-mode");
+}
+
+/* ---------------------------------------------------
+   COOKIE BANNER (GDPR)
+--------------------------------------------------- */
+(function () {
+  const consentKey = "cookieConsent";
+  const hasConsent = localStorage.getItem(consentKey);
+
+  if (!hasConsent) {
+    const banner = document.createElement("div");
+    banner.className = "cookie-banner";
+    banner.innerHTML = `
+      <p>
+        <span class="lang-en">This site uses cookies to improve your experience. By continuing, you accept cookies.</span>
+        <span class="lang-fa">این وب‌سایت از کوکی‌ها برای بهبود تجربه شما استفاده می‌کند. با ادامه استفاده، شما با استفاده از کوکی‌ها موافقت می‌کنید.</span>
+      </p>
+      <button id="cookieAccept">
+        <span class="lang-en">Accept</span>
+        <span class="lang-fa">قبول</span>
+      </button>
+    `;
+    document.body.appendChild(banner);
+
+    const acceptBtn = document.getElementById("cookieAccept");
+    if (acceptBtn) {
+      acceptBtn.addEventListener("click", () => {
+        localStorage.setItem(consentKey, "true");
+        banner.remove();
+      });
+    }
+  }
+})();
+
+/* ---------------------------------------------------
    DESKTOP CAROUSEL (Services Page)
 --------------------------------------------------- */
 const track = document.querySelector(".carousel-track");
@@ -33,28 +87,39 @@ const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 
 if (track && prevBtn && nextBtn) {
-  let position = 0;
-  const cardWidth = 320; // width of each service card + gap
+  let index = 0;
 
-  nextBtn.addEventListener("click", () => {
-    position -= cardWidth;
-    if (Math.abs(position) >= track.scrollWidth - cardWidth) {
-      position = 0; // loop back to start
-    }
-    track.style.transform = `translateX(${position}px)`;
-  });
+  const getCards = () => track.querySelectorAll(".service-card");
+
+  const updateCarousel = () => {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    const cardWidth = cards[0].offsetWidth + 16; // width + gap
+    track.style.transform = `translateX(-${index * cardWidth}px)`;
+  };
 
   prevBtn.addEventListener("click", () => {
-    position += cardWidth;
-    if (position > 0) {
-      position = -(track.scrollWidth - cardWidth);
-    }
-    track.style.transform = `translateX(${position}px)`;
+    const cards = getCards();
+    if (!cards.length) return;
+
+    index = (index - 1 + cards.length) % cards.length;
+    updateCarousel();
   });
+
+  nextBtn.addEventListener("click", () => {
+    const cards = getCards();
+    if (!cards.length) return;
+
+    index = (index + 1) % cards.length;
+    updateCarousel();
+  });
+
+  updateCarousel();
 }
 
 /* ---------------------------------------------------
-   SMOOTH SCROLL (Optional Enhancement)
+   SMOOTH SCROLL FOR INTERNAL LINKS
 --------------------------------------------------- */
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {

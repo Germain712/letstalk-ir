@@ -3,7 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Let’s Talk IR – Shiva</title>
+
+    <title>Let’s Talk IR – Intuitive Counseling & Trauma Recovery</title>
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Intuitive counseling psychologist helping individuals heal from narcissistic trauma, emotional traps, and dysfunctional cycles. Deep, honest, transformative guidance."
+    />
+    <meta
+      property="og:title"
+      content="Let’s Talk IR – Intuitive Counseling & Trauma Recovery"
+    />
+    <meta
+      property="og:description"
+      content="Deep, intuitive guidance for emotional healing, trauma recovery, and higher‑self alignment."
+    />
+    <meta property="og:image" content="assets/images/hero-shiva.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
+
+    <!-- Google Analytics (replace G-XXXXXXX with real ID) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-XXXXXXX");
+    </script>
 
     <!-- English Fonts -->
     <link
@@ -29,64 +61,101 @@
           <span class="brand-title">Let’s Talk IR</span>
         </div>
 
+        <!-- LANGUAGE TOGGLE (header) -->
+        <div class="lang-switch">
+          <button class="lang-btn">
+            <span class="flag-en">🇬🇧</span>
+            <span class="flag-fa">🇮🇷</span>
+          </button>
+        </div>
+
+        <!-- MOBILE MENU BUTTON -->
         <button class="menu-toggle" id="menuToggle">☰</button>
 
+        <!-- NAVIGATION -->
         <nav class="main-nav" id="mainNav">
-          <a href="index.html" class="active">Home</a>
-          <a href="about.html">About</a>
-          <a href="services.html">Services</a>
-          <a href="testimonials.html">Testimonials</a>
-          <a href="contact.html">Contact</a>
+          <a href="index.html" class="active">
+            <span class="lang-en">Home</span>
+            <span class="lang-fa">خانه</span>
+          </a>
+
+          <a href="about.html">
+            <span class="lang-en">About</span>
+            <span class="lang-fa">درباره</span>
+          </a>
+
+          <a href="services.html">
+            <span class="lang-en">Services</span>
+            <span class="lang-fa">خدمات</span>
+          </a>
+
+          <a href="testimonials.html">
+            <span class="lang-en">Testimonials</span>
+            <span class="lang-fa">نظرات</span>
+          </a>
+
+          <a href="contact.html">
+            <span class="lang-en">Contact</span>
+            <span class="lang-fa">تماس</span>
+          </a>
         </nav>
       </div>
     </header>
+
+    <!-- FLOATING LANGUAGE BUTTON (mobile) -->
+    <button class="floating-lang-btn">
+      <span class="flag-en">🇬🇧</span>
+      <span class="flag-fa">🇮🇷</span>
+    </button>
 
     <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <img
           src="assets/images/hero-shiva.jpeg"
-          alt="Shiva portrait"
+          alt="Shiva – Intuitive Counseling Psychologist"
           class="hero-img"
         />
 
-        <h1 class="hero-title">Real Talk. Real Growth.</h1>
+        <h1 class="hero-title">
+          <span class="lang-en">Real Healing. Real Clarity. Real You.</span>
+          <span class="lang-fa">شفا واقعی. وضوح واقعی. خودِ واقعی.</span>
+        </h1>
+
         <p class="hero-subtitle">
-          Empowering Farsi-speaking voices with heart and insight.
+          <span class="lang-en">
+            I am an intuitive counseling psychologist helping individuals break
+            free from emotional traps, narcissistic trauma, and dysfunctional
+            cycles. My approach blends clinical training with deep intuition,
+            honest communication, and a powerful ability to connect at a soul
+            level.
+          </span>
+
+          <span class="lang-fa">
+            من یک روانشناس مشاور و مربی شهودی هستم که به افراد کمک می‌کنم از
+            تله‌های احساسی، تروماهای خودشیفتگی و چرخه‌های ناسالم رها شوند.
+            رویکرد من ترکیبی از دانش علمی، شهود عمیق و ارتباط صادقانه و روحی با
+            انسان‌هاست.
+          </span>
         </p>
 
-        <a href="contact.html" class="btn-primary hero-btn">Book a Session</a>
-      </div>
-    </section>
-
-    <!-- ENGLISH INTRO -->
-    <section class="section intro">
-      <div class="container">
-        <h2>Welcome</h2>
-        <p>
-          I’m Shiva — a bilingual creator helping people find clarity,
-          confidence, and emotional balance through honest conversation. Whether
-          you’re navigating relationships, identity, culture, or personal
-          growth, this is a space for real talk and real support.
-        </p>
-      </div>
-    </section>
-
-    <!-- FARSI INTRO -->
-    <section class="section intro rtl">
-      <div class="container">
-        <h2>خوش آمدید</h2>
-        <p>
-          من شیوا هستم؛ اینجا جاییه برای گفتگوهای واقعی، حمایت صمیمانه و پیدا
-          کردن وضوح و آرامش در مسیر رشد فردی. چه درگیر روابط باشید، چه هویت،
-          فرهنگ یا چالش‌های شخصی، اینجا همراهت هستم.
-        </p>
+        <a href="services.html" class="btn-primary">
+          <span class="lang-en">Explore Services</span>
+          <span class="lang-fa">مشاهده خدمات</span>
+        </a>
       </div>
     </section>
 
     <!-- FOOTER -->
     <footer class="footer">
-      <p>© <span id="year"></span> Let’s Talk IR – Shiva</p>
+      <p>
+        <span class="lang-en"
+          >© <span id="year"></span> Let’s Talk IR – Shiva</span
+        >
+        <span class="lang-fa"
+          >© <span id="year"></span> لتس تاک آی‌آر – شیوا</span
+        >
+      </p>
     </footer>
 
     <script src="script.js"></script>
