@@ -21,9 +21,8 @@
     />
     <meta property="og:image" content="assets/images/hero-shiva.jpg" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://yourdomain.com" />
 
-    <!-- Google Analytics (replace G-XXXXXXX with real ID) -->
+    <!-- Google Analytics -->
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
@@ -37,13 +36,11 @@
       gtag("config", "G-XXXXXXX");
     </script>
 
-    <!-- English Fonts -->
+    <!-- Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Farsi Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -55,13 +52,12 @@
   <body>
     <!-- HEADER -->
     <header class="site-header">
-      <div class="container header-inner">
+      <div class="header-inner container">
         <div class="brand">
           <div class="logo-circle">LT</div>
           <span class="brand-title">Let’s Talk IR</span>
         </div>
 
-        <!-- LANGUAGE TOGGLE (header) -->
         <div class="lang-switch">
           <button class="lang-btn">
             <span class="flag-en">🇬🇧</span>
@@ -69,40 +65,34 @@
           </button>
         </div>
 
-        <!-- MOBILE MENU BUTTON -->
         <button class="menu-toggle" id="menuToggle">☰</button>
 
-        <!-- NAVIGATION -->
         <nav class="main-nav" id="mainNav">
-          <a href="index.html" class="active">
-            <span class="lang-en">Home</span>
-            <span class="lang-fa">خانه</span>
-          </a>
-
-          <a href="about.html">
-            <span class="lang-en">About</span>
-            <span class="lang-fa">درباره</span>
-          </a>
-
-          <a href="services.html">
-            <span class="lang-en">Services</span>
-            <span class="lang-fa">خدمات</span>
-          </a>
-
-          <a href="testimonials.html">
-            <span class="lang-en">Testimonials</span>
-            <span class="lang-fa">نظرات</span>
-          </a>
-
-          <a href="contact.html">
-            <span class="lang-en">Contact</span>
-            <span class="lang-fa">تماس</span>
-          </a>
+          <a href="index.html" class="active"
+            ><span class="lang-en">Home</span
+            ><span class="lang-fa">خانه</span></a
+          >
+          <a href="about.html"
+            ><span class="lang-en">About</span
+            ><span class="lang-fa">درباره</span></a
+          >
+          <a href="services.html"
+            ><span class="lang-en">Services</span
+            ><span class="lang-fa">خدمات</span></a
+          >
+          <a href="testimonials.html"
+            ><span class="lang-en">Testimonials</span
+            ><span class="lang-fa">نظرات</span></a
+          >
+          <a href="contact.html"
+            ><span class="lang-en">Contact</span
+            ><span class="lang-fa">تماس</span></a
+          >
         </nav>
       </div>
     </header>
 
-    <!-- FLOATING LANGUAGE BUTTON (mobile) -->
+    <!-- FLOATING MOBILE LANGUAGE BUTTON -->
     <button class="floating-lang-btn">
       <span class="flag-en">🇬🇧</span>
       <span class="flag-fa">🇮🇷</span>
@@ -112,9 +102,9 @@
     <section class="hero">
       <div class="hero-inner">
         <img
-          src="assets/images/hero-shiva.jpeg"
-          alt="Shiva – Intuitive Counseling Psychologist"
+          src="assets/images/hero-shiva.jpg"
           class="hero-img"
+          alt="Shiva – Intuitive Counseling Psychologist"
         />
 
         <h1 class="hero-title">
@@ -126,16 +116,11 @@
           <span class="lang-en">
             I am an intuitive counseling psychologist helping individuals break
             free from emotional traps, narcissistic trauma, and dysfunctional
-            cycles. My approach blends clinical training with deep intuition,
-            honest communication, and a powerful ability to connect at a soul
-            level.
+            cycles.
           </span>
-
           <span class="lang-fa">
             من یک روانشناس مشاور و مربی شهودی هستم که به افراد کمک می‌کنم از
-            تله‌های احساسی، تروماهای خودشیفتگی و چرخه‌های ناسالم رها شوند.
-            رویکرد من ترکیبی از دانش علمی، شهود عمیق و ارتباط صادقانه و روحی با
-            انسان‌هاست.
+            تله‌های احساسی و تروماهای خودشیفتگی رها شوند.
           </span>
         </p>
 
@@ -148,6 +133,19 @@
 
     <!-- FOOTER -->
     <footer class="footer">
+      <div class="social-links">
+        <a href="https://www.instagram.com/letstalk_ir" target="_blank">📸</a>
+        <a href="https://www.tiktok.com/@misspurple.1111" target="_blank">🎵</a>
+        <a
+          href="https://www.linkedin.com/in/shiva-maghsoudian-6784a12a2/"
+          target="_blank"
+          >💼</a
+        >
+        <a href="https://www.facebook.com/shiva.maghsoudian" target="_blank"
+          >👍</a
+        >
+      </div>
+
       <p>
         <span class="lang-en"
           >© <span id="year"></span> Let’s Talk IR – Shiva</span
