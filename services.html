@@ -8,6 +8,9 @@
       Services – Trauma Recovery, Intuitive Counseling, Higher‑Self Coaching
     </title>
 
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="assets/images/hero-shiva.webp" />
+
     <!-- SEO -->
     <meta
       name="description"
@@ -21,38 +24,17 @@
       property="og:description"
       content="Deep, intuitive guidance for emotional healing, trauma recovery, and higher‑self alignment."
     />
-    <meta property="og:image" content="assets/images/hero-shiva.jpg" />
+    <meta property="og:image" content="assets/images/hero-shiva.webp" />
     <meta property="og:type" content="website" />
 
-    <!-- Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-XXXXXXX");
-    </script>
-
-    <!-- Fonts -->
+    <!-- Google Fonts (Optimised) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
+    <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://kit.fontawesome.com/4f05169479.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
 
   <body>
@@ -135,6 +117,7 @@
           <span class="lang-fa">آنچه ارائه می‌دهم</span>
         </h2>
 
+        <!-- MOBILE GRID -->
         <div class="service-grid">
           <div class="service-card">
             <h3>
@@ -266,20 +249,16 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="social-links">
-        <a href="https://www.instagram.com/letstalk_ir" target="_blank"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://www.tiktok.com/@misspurple.1111" target="_blank"
-          ><i class="fa-brands fa-tiktok"></i
-        ></a>
+        <a href="https://www.instagram.com/letstalk_ir" target="_blank">📸</a>
+        <a href="https://www.tiktok.com/@misspurple.1111" target="_blank">🎵</a>
         <a
           href="https://www.linkedin.com/in/shiva-maghsoudian-6784a12a2/"
           target="_blank"
-          ><i class="fa-brands fa-linkedin"></i
-        ></a>
+          >💼</a
+        >
         <a href="https://www.facebook.com/shiva.maghsoudian" target="_blank"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
+          >👍</a
+        >
       </div>
 
       <p>
@@ -292,6 +271,7 @@
       </p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Scripts (Deferred) -->
+    <script src="script.js" defer></script>
   </body>
 </html>

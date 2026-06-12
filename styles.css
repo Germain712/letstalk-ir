@@ -9,7 +9,7 @@
 
 html,
 body {
-  font-family: "Poppins", "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #ffffff;
   color: #222;
   scroll-behavior: smooth;
@@ -20,6 +20,7 @@ img {
   display: block;
 }
 
+/* Containers */
 .container {
   width: 90%;
   max-width: 1100px;
@@ -50,7 +51,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   HEADER + NAVIGATION (CLEAN VERSION)
+   HEADER + NAVIGATION
 --------------------------------------------------- */
 .site-header {
   background: #fff;
@@ -91,7 +92,6 @@ p {
   font-weight: 600;
 }
 
-/* Desktop nav (default) */
 .main-nav {
   display: flex;
   gap: 1.5rem;
@@ -107,7 +107,6 @@ p {
   color: #5a2a82;
 }
 
-/* Hamburger button (hidden on desktop) */
 .menu-toggle {
   display: none;
   font-size: 2rem;
@@ -136,14 +135,12 @@ p {
     gap: 1.5rem;
     padding: 2rem 0;
     border-bottom: 1px solid #eee;
-
     max-height: 0;
     overflow: hidden;
     opacity: 0;
     transition:
       max-height 0.4s ease,
       opacity 0.3s ease;
-
     z-index: 1500;
   }
 
@@ -158,24 +155,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   DESKTOP BREAKPOINT
---------------------------------------------------- */
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  .main-nav {
-    display: flex;
-    position: static;
-    max-height: none;
-    opacity: 1;
-    padding: 0;
-  }
-}
-
-/* ---------------------------------------------------
-   HERO SECTION (Animated Gradient)
+   HERO SECTION
 --------------------------------------------------- */
 .hero {
   text-align: center;
@@ -247,23 +227,6 @@ p {
   background: #e86c00;
 }
 
-.btn-secondary {
-  display: inline-block;
-  background: #fff;
-  color: #5a2a82;
-  padding: 0.8rem 1.6rem;
-  border-radius: 8px;
-  border: 2px solid #5a2a82;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-secondary:hover {
-  background: #5a2a82;
-  color: #fff;
-}
-
 /* ---------------------------------------------------
    SECTIONS
 --------------------------------------------------- */
@@ -277,7 +240,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   SERVICE CARDS (Grid + Carousel)
+   SERVICE CARDS
 --------------------------------------------------- */
 .service-grid {
   display: grid;
@@ -339,7 +302,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   TESTIMONIAL CARDS
+   TESTIMONIALS
 --------------------------------------------------- */
 .testimonial-card {
   background: linear-gradient(135deg, #5a2a82, #ff7a00);
@@ -386,6 +349,24 @@ p {
   border-top: 1px solid #eee;
 }
 
+/* Social icons spacing */
+.social-links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1.8rem;
+}
+
+.social-links a {
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+  opacity: 0.6;
+}
+
 /* ---------------------------------------------------
    RESPONSIVE BREAKPOINTS
 --------------------------------------------------- */
@@ -393,14 +374,13 @@ p {
   .service-grid {
     display: none;
   }
-
   .service-carousel {
     display: block;
   }
 }
 
 /* ---------------------------------------------------
-   LANGUAGE TOGGLE + FLAGS + FADE ANIMATION
+   LANGUAGE TOGGLE + FLAGS
 --------------------------------------------------- */
 .lang-switch {
   margin-left: 1rem;
@@ -479,7 +459,7 @@ p {
 }
 
 /* ---------------------------------------------------
-   COOKIE BANNER (GDPR)
+   COOKIE BANNER
 --------------------------------------------------- */
 .cookie-banner {
   position: fixed;
