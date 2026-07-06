@@ -10,8 +10,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
   if (menuToggle && mainNav) {
     menuToggle.addEventListener("click", () => {
-      mainNav.classList.toggle("open");
+      const isOpen = mainNav.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      mainNav.setAttribute("aria-hidden", String(!isOpen));
       document.body.classList.toggle("no-scroll");
+    });
+
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        mainNav.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("no-scroll");
+      });
     });
   }
 
@@ -22,11 +33,14 @@ window.addEventListener("DOMContentLoaded", () => {
   const floatingLangBtn = document.querySelector(".floating-lang-btn");
 
   function toggleLanguage() {
-    document.body.classList.toggle("fa-mode");
-    localStorage.setItem(
-      "langMode",
-      document.body.classList.contains("fa-mode") ? "fa" : "en",
-    );
+    const isFa = document.body.classList.toggle("fa-mode");
+    localStorage.setItem("langMode", isFa ? "fa" : "en");
+
+    [langBtn, floatingLangBtn].forEach((button) => {
+      if (button) {
+        button.setAttribute("aria-pressed", String(isFa));
+      }
+    });
   }
 
   if (langBtn) langBtn.addEventListener("click", toggleLanguage);
@@ -81,8 +95,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // ---------------------------------------------------
   // AUTO YEAR IN FOOTER
   // ---------------------------------------------------
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
+  document.querySelectorAll(".year").forEach((yearSpan) => {
     yearSpan.textContent = new Date().getFullYear();
-  }
+  });
 });
