@@ -100,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------------------------------------------------
-  // CONTACT FORM VALIDATION
+  // CONTACT FORM VALIDATION (Netlify Forms)
   // ---------------------------------------------------
   const contactForm = document.getElementById("contactForm");
   const contactSuccess = document.getElementById("contactSuccess");
@@ -126,7 +126,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch(contactForm.action, {
+        const response = await fetch("/", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
@@ -134,20 +134,17 @@ window.addEventListener("DOMContentLoaded", () => {
           body: new URLSearchParams(new FormData(form)).toString(),
         });
 
-        const data = await response.json().catch(() => ({}));
-
-        if (!response.ok || !data.success) {
-          throw new Error(
-            data.error || "Unable to send your message right now.",
-          );
+        // Netlify returns 200 or 302 on success
+        if (response.ok || response.status === 302) {
+          form.reset();
+          if (contactSuccess) {
+            contactSuccess.style.display = "block";
+          }
+        } else {
+          alert("There was a problem sending your message. Please try again.");
         }
-
-        form.reset();
-        if (contactSuccess) {
-          contactSuccess.style.display = "block";
-        }
-      } catch (error) {
-        alert(error.message || "Unable to send your message right now.");
+      } catch {
+        alert("Network issue — please try again in a moment.");
       }
     });
   }
@@ -185,6 +182,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ---------------------------------------------------
+  // STRIPE CHECKOUT BUTTONS
+  // ---------------------------------------------------
   document.querySelectorAll(".checkout-btn").forEach((button) => {
     button.addEventListener("click", async () => {
       const amount = button.dataset.amount || "4000";
@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
           alert("Stripe checkout could not be started. Please try again.");
         }
-      } catch (error) {
+      } catch {
         alert("Stripe checkout could not be started. Please try again.");
       }
     });
