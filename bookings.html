@@ -6,7 +6,7 @@
 
     <title>Book a Session with Shiva</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
-    <link rel="canonical" href="https://letstalkir.com/contact.html" />
+    <link rel="canonical" href="https://letstalk-ir.com/bookings.html" />
     <meta name="theme-color" content="#5a2a82" />
 
     <!-- Preload hero image -->
@@ -15,17 +15,17 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="Contact Shiva for intuitive counseling, trauma recovery sessions, and emotional healing guidance. Book your consultation today."
+      content="Book a counselling session with Shiva. Choose your preferred date and time and complete payment securely through Stripe."
     />
-    <meta property="og:title" content="Contact – Let’s Talk IR" />
+    <meta property="og:title" content="Bookings – Let’s Talk IR" />
     <meta
       property="og:description"
-      content="Reach out to Shiva for intuitive counseling, trauma recovery, and emotional clarity."
+      content="Book your intuitive counseling session with Shiva."
     />
     <meta property="og:image" content="assets/images/hero-shiva.webp" />
     <meta property="og:type" content="website" />
 
-    <!-- Google Fonts (Optimised) -->
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -34,7 +34,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
+    <!-- HEADER -->
     <header class="site-header">
       <div class="header-inner container">
         <div class="brand">
@@ -89,7 +91,7 @@
           >
           <a href="bookings.html" class="active"
             ><span class="lang-en">Bookings</span
-            ><span class="lang-fa">رزرو</span></a
+            ><span class="lang-fa">رزرو جلسه</span></a
           >
           <a href="contact.html"
             ><span class="lang-en">Contact</span
@@ -99,6 +101,7 @@
       </div>
     </header>
 
+    <!-- FLOATING MOBILE LANGUAGE BUTTON -->
     <button
       class="floating-lang-btn"
       type="button"
@@ -109,6 +112,7 @@
       <span class="flag-fa">🇮🇷</span>
     </button>
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-inner">
         <img
@@ -135,8 +139,10 @@
       </div>
     </section>
 
+    <!-- BOOKING SECTION -->
     <section class="section">
       <div class="container">
+        <!-- Stripe Payment Card -->
         <div class="booking-card">
           <h3>
             <span class="lang-en">Counselling Session</span>
@@ -158,6 +164,7 @@
           </button>
         </div>
 
+        <!-- NETLIFY BOOKING FORM -->
         <form
           class="booking-form"
           name="booking"
@@ -217,6 +224,7 @@
             class="form-success"
             role="status"
             aria-live="polite"
+            style="display: none"
           >
             <span class="lang-en"
               >Your booking request has been received. I’ll be in touch
