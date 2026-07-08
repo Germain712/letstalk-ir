@@ -98,4 +98,37 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".year").forEach((yearSpan) => {
     yearSpan.textContent = new Date().getFullYear();
   });
+
+  // ---------------------------------------------------
+  // BOOKING FORM VALIDATION
+  // ---------------------------------------------------
+  const bookingForm = document.getElementById("bookingForm");
+  const bookingSuccess = document.getElementById("bookingSuccess");
+
+  if (bookingForm) {
+    bookingForm.addEventListener("submit", (event) => {
+      const form = event.currentTarget;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const date = form["preferred-date"].value.trim();
+      const time = form["preferred-time"].value.trim();
+
+      if (!name || !email || !date || !time) {
+        event.preventDefault();
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        event.preventDefault();
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (bookingSuccess) {
+        bookingSuccess.style.display = "block";
+      }
+    });
+  }
 });

@@ -176,69 +176,70 @@
           </button>
         </form>
 
-        <!-- CONTACT INFO -->
-        <div class="contact-info">
-          <h3>
-            <span class="lang-en">Contact Details</span
-            ><span class="lang-fa">اطلاعات تماس</span>
-          </h3>
-
-          <p>
-            <strong
-              ><span class="lang-en">Email:</span
-              ><span class="lang-fa">ایمیل:</span></strong
-            >
-            <a href="mailto:info@letstalkir.com">info@letstalkir.com</a>
-          </p>
-
-          <p>
-            <strong
-              ><span class="lang-en">Phone:</span
-              ><span class="lang-fa">تلفن:</span></strong
-            >
-            <a href="tel:+447000000000">+44 7000 000000</a>
-          </p>
-
-          <p>
-            <strong
-              ><span class="lang-en">Location:</span
-              ><span class="lang-fa">موقعیت:</span></strong
-            >
-            <span class="lang-en">London, United Kingdom</span>
-            <span class="lang-fa">لندن، بریتانیا</span>
-          </p>
-        </div>
-
-        <!-- BOOKING CALENDAR -->
         <div class="booking-calendar">
-          <h3>
-            <span class="lang-en">Book a Session</span
-            ><span class="lang-fa">رزرو جلسه</span>
-          </h3>
+          <form
+            class="booking-form"
+            name="booking"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            id="bookingForm"
+          >
+            <input type="hidden" name="form-name" value="booking" />
 
-          <p>
-            <span class="lang-en"
-              >Choose a date and time that works for you. I will confirm your
-              booking by email.</span
-            >
-            <span class="lang-fa"
-              >تاریخ و ساعتی که برای شما مناسب است را انتخاب کنید. زمان جلسه از
-              طریق ایمیل تأیید خواهد شد.</span
-            >
-          </p>
+            <input
+              type="text"
+              name="bot-field"
+              class="sr-only"
+              tabindex="-1"
+              autocomplete="off"
+            />
 
-          <form>
-            <label
-              ><span class="lang-en">Preferred Date</span
-              ><span class="lang-fa">تاریخ مورد نظر</span></label
-            >
-            <input type="date" required />
+            <h3>
+              <span class="lang-en">Book a Session</span>
+              <span class="lang-fa">رزرو جلسه</span>
+            </h3>
 
-            <label
-              ><span class="lang-en">Preferred Time</span
-              ><span class="lang-fa">ساعت مورد نظر</span></label
-            >
-            <select required>
+            <p>
+              <span class="lang-en"
+                >Please fill out your details and choose a preferred date and
+                time. I will confirm your booking by email.</span
+              >
+              <span class="lang-fa"
+                >لطفاً اطلاعات خود را وارد کرده و تاریخ و زمان مورد نظر را
+                انتخاب کنید. زمان جلسه از طریق ایمیل تأیید خواهد شد.</span
+              >
+            </p>
+
+            <label>
+              <span class="lang-en">Your Name</span>
+              <span class="lang-fa">نام شما</span>
+            </label>
+            <input type="text" name="name" required />
+
+            <label>
+              <span class="lang-en">Your Email</span>
+              <span class="lang-fa">ایمیل شما</span>
+            </label>
+            <input type="email" name="email" required />
+
+            <label>
+              <span class="lang-en">Message (optional)</span>
+              <span class="lang-fa">پیام (اختیاری)</span>
+            </label>
+            <textarea name="message"></textarea>
+
+            <label>
+              <span class="lang-en">Preferred Date</span>
+              <span class="lang-fa">تاریخ مورد نظر</span>
+            </label>
+            <input type="date" name="preferred-date" required />
+
+            <label>
+              <span class="lang-en">Preferred Time</span>
+              <span class="lang-fa">ساعت مورد نظر</span>
+            </label>
+            <select name="preferred-time" required>
               <option value="">--</option>
               <option>09:00</option>
               <option>10:00</option>
@@ -252,6 +253,21 @@
               <span class="lang-en">Request Booking</span>
               <span class="lang-fa">درخواست رزرو</span>
             </button>
+
+            <p
+              id="bookingSuccess"
+              class="form-success"
+              role="status"
+              aria-live="polite"
+            >
+              <span class="lang-en"
+                >Your booking request has been received. I’ll be in touch
+                soon.</span
+              >
+              <span class="lang-fa"
+                >درخواست رزرو شما دریافت شد. به زودی با شما تماس می‌گیرم.</span
+              >
+            </p>
           </form>
         </div>
       </div>
