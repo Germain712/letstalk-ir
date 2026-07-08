@@ -106,27 +106,48 @@ window.addEventListener("DOMContentLoaded", () => {
   const contactSuccess = document.getElementById("contactSuccess");
 
   if (contactForm) {
-    contactForm.addEventListener("submit", (event) => {
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
       const form = event.currentTarget;
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
+      const name = form.elements.name.value.trim();
+      const email = form.elements.email.value.trim();
+      const message = form.elements.message.value.trim();
 
       if (!name || !email || !message) {
-        event.preventDefault();
         alert("Please fill out all required fields.");
         return;
       }
 
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
-        event.preventDefault();
         alert("Please enter a valid email address.");
         return;
       }
 
-      if (contactSuccess) {
-        contactSuccess.style.display = "block";
+      try {
+        const response = await fetch(contactForm.action, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+          },
+          body: new URLSearchParams(new FormData(form)).toString(),
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (!response.ok || !data.success) {
+          throw new Error(
+            data.error || "Unable to send your message right now.",
+          );
+        }
+
+        form.reset();
+        if (contactSuccess) {
+          contactSuccess.style.display = "block";
+        }
+      } catch (error) {
+        alert(error.message || "Unable to send your message right now.");
       }
     });
   }
