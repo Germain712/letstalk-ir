@@ -154,13 +154,13 @@
           >
         </p>
 
-        <!-- CONTACT FORM -->
+        <!-- CONTACT FORM (Netlify Forms) -->
         <form
           class="contact-form"
           name="contact"
           method="POST"
-          action="/.netlify/functions/contact"
-          enctype="application/x-www-form-urlencoded"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
           id="contactForm"
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -200,6 +200,7 @@
             class="form-success"
             role="status"
             aria-live="polite"
+            style="display: none"
           >
             <span class="lang-en"
               >Your message has been sent successfully.</span
@@ -210,7 +211,6 @@
       </div>
     </section>
 
-    <!--Test comment - remove-->
     <!-- FOOTER -->
     <footer class="footer">
       <div class="social-links">
