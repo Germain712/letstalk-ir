@@ -349,12 +349,26 @@ p {
 .booking-form input,
 .booking-form select,
 .booking-form textarea {
-  padding: 0.8rem;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  padding: 0.85rem 0.95rem;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
   font-size: 1rem;
   width: 100%;
   font: inherit;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus,
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  outline: none;
+  border-color: #ff7a00;
+  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.15);
 }
 
 .contact-form textarea,
@@ -365,11 +379,11 @@ p {
 
 .booking-calendar {
   margin-top: 2rem;
-  padding: 1.5rem;
-  border-radius: 16px;
+  padding: 1.6rem;
+  border-radius: 18px;
   background: linear-gradient(135deg, #ffffff, #f9fafb);
   border: 1px solid #eee;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 30px rgba(90, 42, 130, 0.08);
 }
 
 .booking-calendar h3 {
@@ -383,11 +397,12 @@ p {
 .form-success {
   display: none;
   margin-top: 0.5rem;
-  padding: 0.85rem 1rem;
-  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
   background: #ecfdf3;
   color: #047857;
   border: 1px solid #a7f3d0;
+  font-weight: 600;
 }
 
 .sr-only {
