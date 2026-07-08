@@ -101,6 +101,11 @@ p {
   text-decoration: none;
   color: #444;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  position: relative;
 }
 
 .main-nav a:hover {
@@ -537,18 +542,27 @@ p {
 .lang-en,
 .lang-fa {
   transition: opacity 0.3s ease;
+  display: inline-block;
 }
 
 .lang-fa {
   opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .fa-mode .lang-en {
   opacity: 0;
+  position: absolute;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .fa-mode .lang-fa {
   opacity: 1;
+  position: static;
+  visibility: visible;
 }
 
 .flag-en,
