@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Book a Session with Shiva</title>
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+    <link rel="canonical" href="https://letstalkir.com/contact.html" />
+    <meta name="theme-color" content="#5a2a82" />
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="assets/images/hero-shiva.webp" />
+
+    <!-- SEO -->
+    <meta
+      name="description"
+      content="Contact Shiva for intuitive counseling, trauma recovery sessions, and emotional healing guidance. Book your consultation today."
+    />
+    <meta property="og:title" content="Contact – Let’s Talk IR" />
+    <meta
+      property="og:description"
+      content="Reach out to Shiva for intuitive counseling, trauma recovery, and emotional clarity."
+    />
+    <meta property="og:image" content="assets/images/hero-shiva.webp" />
+    <meta property="og:type" content="website" />
+
+    <!-- Google Fonts (Optimised) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Vazirmatn:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner container">
+        <div class="brand">
+          <div class="logo-circle">LT</div>
+          <span class="brand-title">Let’s Talk IR</span>
+        </div>
+
+        <div class="lang-switch">
+          <button
+            class="lang-btn"
+            type="button"
+            aria-label="Switch language"
+            aria-pressed="false"
+          >
+            <span class="flag-en">🇬🇧</span>
+            <span class="flag-fa">🇮🇷</span>
+          </button>
+        </div>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+          aria-controls="mainNav"
+        >
+          ☰
+        </button>
+
+        <nav
+          class="main-nav"
+          id="mainNav"
+          aria-label="Main navigation"
+          aria-hidden="true"
+        >
+          <a href="index.html"
+            ><span class="lang-en">Home</span
+            ><span class="lang-fa">خانه</span></a
+          >
+          <a href="about.html"
+            ><span class="lang-en">About</span
+            ><span class="lang-fa">درباره</span></a
+          >
+          <a href="services.html"
+            ><span class="lang-en">Services</span
+            ><span class="lang-fa">خدمات</span></a
+          >
+          <a href="testimonials.html"
+            ><span class="lang-en">Testimonials</span
+            ><span class="lang-fa">نظرات</span></a
+          >
+          <a href="bookings.html" class="active"
+            ><span class="lang-en">Bookings</span
+            ><span class="lang-fa">رزرو</span></a
+          >
+          <a href="contact.html"
+            ><span class="lang-en">Contact</span
+            ><span class="lang-fa">تماس</span></a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <button
+      class="floating-lang-btn"
+      type="button"
+      aria-label="Switch language"
+      aria-pressed="false"
+    >
+      <span class="flag-en">🇬🇧</span>
+      <span class="flag-fa">🇮🇷</span>
+    </button>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <img
+          src="assets/images/hero-shiva.webp"
+          class="hero-img"
+          alt="Shiva – Intuitive Counseling Psychologist"
+        />
+
+        <h1 class="hero-title">
+          <span class="lang-en">Book a Session</span>
+          <span class="lang-fa">رزرو جلسه</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          <span class="lang-en">
+            Choose a session option below and complete payment securely through
+            Stripe.
+          </span>
+          <span class="lang-fa">
+            گزینه مورد نظر خود را انتخاب کنید و پرداخت را به‌صورت امن از طریق
+            Stripe انجام دهید.
+          </span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="booking-card">
+          <h3>
+            <span class="lang-en">Counselling Session</span>
+            <span class="lang-fa">جلسه مشاوره</span>
+          </h3>
+          <p class="price">£40</p>
+          <p>
+            <span class="lang-en">A 50-minute session with Shiva.</span>
+            <span class="lang-fa">جلسه ۵۰ دقیقه‌ای با شیوا.</span>
+          </p>
+          <button
+            type="button"
+            class="btn-primary checkout-btn"
+            data-booking-type="session"
+            data-amount="4000"
+          >
+            <span class="lang-en">Pay with Stripe</span>
+            <span class="lang-fa">پرداخت با Stripe</span>
+          </button>
+        </div>
+
+        <form
+          class="booking-form"
+          name="booking"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="bookingForm"
+        >
+          <input type="hidden" name="form-name" value="booking" />
+          <input
+            type="text"
+            name="bot-field"
+            class="sr-only"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
+          <label>
+            <span class="lang-en">Your Name</span>
+            <span class="lang-fa">نام شما</span>
+          </label>
+          <input type="text" name="name" required />
+
+          <label>
+            <span class="lang-en">Your Email</span>
+            <span class="lang-fa">ایمیل شما</span>
+          </label>
+          <input type="email" name="email" required />
+
+          <label>
+            <span class="lang-en">Preferred Date</span>
+            <span class="lang-fa">تاریخ مورد نظر</span>
+          </label>
+          <input type="date" name="preferred-date" required />
+
+          <label>
+            <span class="lang-en">Preferred Time</span>
+            <span class="lang-fa">ساعت مورد نظر</span>
+          </label>
+          <select name="preferred-time" required>
+            <option value="">--</option>
+            <option>09:00</option>
+            <option>10:00</option>
+            <option>11:00</option>
+            <option>13:00</option>
+            <option>14:00</option>
+            <option>15:00</option>
+          </select>
+
+          <button type="submit" class="btn-primary">
+            <span class="lang-en">Request Booking</span>
+            <span class="lang-fa">درخواست رزرو</span>
+          </button>
+
+          <p
+            id="bookingSuccess"
+            class="form-success"
+            role="status"
+            aria-live="polite"
+          >
+            <span class="lang-en"
+              >Your booking request has been received. I’ll be in touch
+              soon.</span
+            >
+            <span class="lang-fa"
+              >درخواست رزرو شما دریافت شد. به زودی با شما تماس می‌گیرم.</span
+            >
+          </p>
+        </form>
+      </div>
+    </section>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

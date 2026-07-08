@@ -201,8 +201,8 @@ p {
 }
 
 .hero-img.small {
-  width: 130px;
-  height: 130px;
+  width: 180px;
+  height: 180px;
 }
 
 .hero-title {
@@ -377,7 +377,8 @@ p {
   resize: vertical;
 }
 
-.booking-calendar {
+.booking-calendar,
+.booking-card {
   margin-top: 2rem;
   padding: 1.6rem;
   border-radius: 18px;
@@ -386,11 +387,18 @@ p {
   box-shadow: 0 10px 30px rgba(90, 42, 130, 0.08);
 }
 
-.booking-calendar h3 {
+.booking-calendar h3,
+.booking-card h3 {
   margin: 0 0 0.75rem;
 }
 
-.booking-calendar p {
+.booking-calendar p,
+.booking-card p {
+  margin-bottom: 0.75rem;
+}
+
+.booking-card .price {
+  font-size: 1.6rem;
   margin-bottom: 0.75rem;
 }
 

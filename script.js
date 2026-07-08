@@ -100,7 +100,39 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // ---------------------------------------------------
-  // BOOKING FORM VALIDATION
+  // CONTACT FORM VALIDATION
+  // ---------------------------------------------------
+  const contactForm = document.getElementById("contactForm");
+  const contactSuccess = document.getElementById("contactSuccess");
+
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      const form = event.currentTarget;
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+
+      if (!name || !email || !message) {
+        event.preventDefault();
+        alert("Please fill out all required fields.");
+        return;
+      }
+
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        event.preventDefault();
+        alert("Please enter a valid email address.");
+        return;
+      }
+
+      if (contactSuccess) {
+        contactSuccess.style.display = "block";
+      }
+    });
+  }
+
+  // ---------------------------------------------------
+  // BOOKING FORM VALIDATION + STRIPE CHECKOUT
   // ---------------------------------------------------
   const bookingForm = document.getElementById("bookingForm");
   const bookingSuccess = document.getElementById("bookingSuccess");
@@ -131,4 +163,28 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  document.querySelectorAll(".checkout-btn").forEach((button) => {
+    button.addEventListener("click", async () => {
+      const amount = button.dataset.amount || "4000";
+      const bookingType = button.dataset.bookingType || "session";
+
+      try {
+        const response = await fetch("/.netlify/functions/checkout", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ amount, bookingType }),
+        });
+
+        const data = await response.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert("Stripe checkout could not be started. Please try again.");
+        }
+      } catch (error) {
+        alert("Stripe checkout could not be started. Please try again.");
+      }
+    });
+  });
 });

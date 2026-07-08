@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Contact – Book a Session with Shiva</title>
+    <title>Send a message to Shiva</title>
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
     <link rel="canonical" href="https://letstalkir.com/contact.html" />
     <meta name="theme-color" content="#5a2a82" />
@@ -89,6 +89,10 @@
             ><span class="lang-en">Testimonials</span
             ><span class="lang-fa">نظرات</span></a
           >
+          <a href="bookings.html"
+            ><span class="lang-en">Bookings</span
+            ><span class="lang-fa">رزرو جلسه</span></a
+          >
           <a href="contact.html" class="active"
             ><span class="lang-en">Contact</span
             ><span class="lang-fa">تماس</span></a
@@ -151,7 +155,23 @@
         </p>
 
         <!-- CONTACT FORM -->
-        <form class="contact-form" action="#" method="POST">
+        <form
+          class="contact-form"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="contactForm"
+        >
+          <input type="hidden" name="form-name" value="contact" />
+          <input
+            type="text"
+            name="bot-field"
+            class="sr-only"
+            tabindex="-1"
+            autocomplete="off"
+          />
+
           <label
             ><span class="lang-en">Your Name</span
             ><span class="lang-fa">نام شما</span></label
@@ -174,102 +194,19 @@
             <span class="lang-en">Send Message</span>
             <span class="lang-fa">ارسال پیام</span>
           </button>
-        </form>
 
-        <div class="booking-calendar">
-          <form
-            class="booking-form"
-            name="booking"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            id="bookingForm"
+          <p
+            id="contactSuccess"
+            class="form-success"
+            role="status"
+            aria-live="polite"
           >
-            <input type="hidden" name="form-name" value="booking" />
-
-            <input
-              type="text"
-              name="bot-field"
-              class="sr-only"
-              tabindex="-1"
-              autocomplete="off"
-            />
-
-            <h3>
-              <span class="lang-en">Book a Session</span>
-              <span class="lang-fa">رزرو جلسه</span>
-            </h3>
-
-            <p>
-              <span class="lang-en"
-                >Please fill out your details and choose a preferred date and
-                time. I will confirm your booking by email.</span
-              >
-              <span class="lang-fa"
-                >لطفاً اطلاعات خود را وارد کرده و تاریخ و زمان مورد نظر را
-                انتخاب کنید. زمان جلسه از طریق ایمیل تأیید خواهد شد.</span
-              >
-            </p>
-
-            <label>
-              <span class="lang-en">Your Name</span>
-              <span class="lang-fa">نام شما</span>
-            </label>
-            <input type="text" name="name" required />
-
-            <label>
-              <span class="lang-en">Your Email</span>
-              <span class="lang-fa">ایمیل شما</span>
-            </label>
-            <input type="email" name="email" required />
-
-            <label>
-              <span class="lang-en">Message (optional)</span>
-              <span class="lang-fa">پیام (اختیاری)</span>
-            </label>
-            <textarea name="message"></textarea>
-
-            <label>
-              <span class="lang-en">Preferred Date</span>
-              <span class="lang-fa">تاریخ مورد نظر</span>
-            </label>
-            <input type="date" name="preferred-date" required />
-
-            <label>
-              <span class="lang-en">Preferred Time</span>
-              <span class="lang-fa">ساعت مورد نظر</span>
-            </label>
-            <select name="preferred-time" required>
-              <option value="">--</option>
-              <option>09:00</option>
-              <option>10:00</option>
-              <option>11:00</option>
-              <option>13:00</option>
-              <option>14:00</option>
-              <option>15:00</option>
-            </select>
-
-            <button type="submit" class="btn-primary">
-              <span class="lang-en">Request Booking</span>
-              <span class="lang-fa">درخواست رزرو</span>
-            </button>
-
-            <p
-              id="bookingSuccess"
-              class="form-success"
-              role="status"
-              aria-live="polite"
+            <span class="lang-en"
+              >Your message has been sent successfully.</span
             >
-              <span class="lang-en"
-                >Your booking request has been received. I’ll be in touch
-                soon.</span
-              >
-              <span class="lang-fa"
-                >درخواست رزرو شما دریافت شد. به زودی با شما تماس می‌گیرم.</span
-              >
-            </p>
-          </form>
-        </div>
+            <span class="lang-fa">پیام شما با موفقیت ارسال شد.</span>
+          </p>
+        </form>
       </div>
     </section>
 
