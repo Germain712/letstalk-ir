@@ -111,7 +111,7 @@ HTTPS enabled by default
 Live site: https://letstalk-ir.com
 
 👤 About the Developer
-This project was built by Reuben, a junior software engineer focused on frontend development, cloud deployment, and building real-world client solutions.
+This project was developed for Nebuer Digital and is maintained as a proprietary client deliverable.
 
 🏷️ Topics
 Code
@@ -139,5 +139,7 @@ mobile-first
 booking-system
 contact-form
 📄 License
-This project is proprietary and built for a real client.
-Please do not reuse or redistribute without permission.
+This project is protected under a proprietary license.
+All code, design assets, content, and related materials remain the property of Nebuer Digital and may not be copied, modified, distributed, or reused without explicit written permission.
+
+See the LICENSE file for full terms.
